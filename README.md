@@ -18,3 +18,5 @@ visuals to keep things interesting.
 
 For an art style I was thiking something along the lines of Beatsaber with darker colours
 contrasted with bright primary coloured neon for that flashy club/EDM feeling.
+
+[Beat Saber](https://www.youtube.com/watch?v=rh0ZRCOIgmw)
