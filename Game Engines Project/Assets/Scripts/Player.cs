@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public float speed = 10.0f;
+    private Rigidbody rb;
+    public bool midJump;
+
+    private void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void Update()
+    {
+        float translation = Input.GetAxis("Vertical") * speed;
+        float straffe = Input.GetAxis("Horizontal") * speed;
+        translation *= Time.deltaTime;
+        straffe *= Time.deltaTime;
+        transform.Translate(straffe, 0, translation);
+        if (midJump == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.AddForce(new Vector3(0, 10, 0), ForceMode.Impulse);
+                midJump = true;
+            }
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        midJump = false;
     }
 }
+
+
+

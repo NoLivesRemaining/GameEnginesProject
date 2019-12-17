@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class blockKill : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Spawn;
     void Start()
     {
         
@@ -20,7 +20,15 @@ public class blockKill : MonoBehaviour
     {
         if (col.gameObject.tag != "Kill")
         {
-            Destroy(col.gameObject);
+            if(col.gameObject.tag == "Player")
+            {
+                col.gameObject.transform.position = Spawn.transform.position;
+            }
+            else
+            {
+                Destroy(col.gameObject);
+            }
+           
         }
     }
 
