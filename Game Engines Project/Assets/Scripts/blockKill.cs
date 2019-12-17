@@ -5,16 +5,7 @@ using UnityEngine;
 public class blockKill : MonoBehaviour
 {
     public GameObject Spawn;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool Respawn = false;
 
     public void OnCollisionEnter(Collision col)
     {
@@ -22,6 +13,7 @@ public class blockKill : MonoBehaviour
         {
             if(col.gameObject.tag == "Player")
             {
+                Respawn = true;
                 col.gameObject.transform.position = Spawn.transform.position;
             }
             else

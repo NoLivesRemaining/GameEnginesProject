@@ -10,6 +10,7 @@ public class audioData : MonoBehaviour
     public static float[] freqBand = new float[8];
     public static float[] bandBuffer = new float[8];
     float[] bufferDecrease = new float[8];
+
       void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,13 +36,13 @@ public class audioData : MonoBehaviour
             if(freqBand [g] > bandBuffer [g] )
             {
                 bandBuffer[g] = freqBand[g];
-                bufferDecrease[g] = 0.005f;
+                bufferDecrease[g] = 0.010f;
 
             }
             if (freqBand[g] < bandBuffer[g])
             {
                 bandBuffer[g] -= bufferDecrease[g];
-                bufferDecrease[g] *= 1.2f;
+                bufferDecrease[g] *= 1.5f;
             }
         }
     }
@@ -49,10 +50,11 @@ public class audioData : MonoBehaviour
     void makeFreqBand()
     {
         int count = 0;
+
         for (int i = 0; i < 8; i++)
         {
             float average = 0;
-            int samplecount = (int)Mathf.Pow(2,i) * 2;
+            int samplecount = (int)Mathf.Pow (2, i) * 2;
 
             if (i == 7)
             {
@@ -61,7 +63,7 @@ public class audioData : MonoBehaviour
 
             for (int j = 0; j < samplecount; j++)
             {
-                average += samples[count] * (count + 1);
+                average += samples [count] * (count + 1);
                     count++;
             }
 
