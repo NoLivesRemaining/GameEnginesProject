@@ -37,4 +37,4 @@ Shouldn't be a problem, UI is set to scale to screen and the controls are univer
 
 Footage of Bump's Gameplay!
 
-[BUMP GAMEPLAY](https://www.youtube.com/watch?v=mJ6Dka03i7I)
+[![Youtube](http://img.youtube.com/vi/mJ6Dka03i7I/0.jpg)](https://www.youtube.com/watch?v=mJ6Dka03i7I)
